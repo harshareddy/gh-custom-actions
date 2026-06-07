@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3 
       - name: Load & cache dependencies
         id: cache-deps
-        uses: ./.github/workflows/actions/cached-deps
+        uses: ./.github/actions/cached-deps
         with:
           caching: false
       - name: Output cache usage
@@ -24,7 +24,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Load & cache dependencies
-        uses: ./.github/workflows/actions/cached-deps
+        uses: ./.github/actions/cached-deps
       - name: Test code
         id: run-tests
         run: npm run test
@@ -41,7 +41,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Load & cache dependencies
-        uses: ./.github/workflows/actions/cached-deps
+        uses: ./.github/actions/cached-deps
       - name: Build website
         run: npm run build
       - name: Upload artifacts
