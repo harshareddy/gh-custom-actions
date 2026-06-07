@@ -1,7 +1,7 @@
 name: 'Get & Cache dependencies'
 description: 'Get the dependencies (via npm ) and cache them.'
 inputs:
-  ca:
+  caching:
     description: 'Whether to cache dependencies or not'
     required: false
     default: 'true'
