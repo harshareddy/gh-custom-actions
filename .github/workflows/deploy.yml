@@ -63,11 +63,8 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        run: echo "Deploying..."
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: run js custom action
         uses: ./.github/actions/deploy-s3-javascript
+        with:
+          bucket: gha-custom-action-hosting-586009412284
+          bucket-region: us-east-2
+          dist-folder: ./dist
