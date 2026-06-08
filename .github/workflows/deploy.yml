@@ -71,7 +71,10 @@ jobs:
           aws-region: us-east-2
       - name: Deploy site
         uses: ./.github/actions/deploy-s3-javascript
+        id: deploy
         with:
           bucket: gha-custom-action-hosting-586009412284
           bucket-region: us-east-2
           dist-folder: ./dist
+      - name: Output website URL
+        run: 'echo "Website URL: ${{ steps.deploy.outputs.website-url }}"'
